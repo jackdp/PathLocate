@@ -25,7 +25,7 @@ To compile, you need:
 - [JPL.CmdLineParser](https://github.com/jackdp/JPL.CmdLineParser) unit.
 - A several Pascal units from my library [JPLib](https://github.com/jackdp/JPLib/).
 - Mini-FPC [MFPC](https://github.com/jackdp/MFPC).
-- Wolfgang Ehrhardt's [hashing units](http://www.wolfgang-ehrhardt.de/crchash_en.html) (all files in the [src\we](src\we) directory).
+- Wolfgang Ehrhardt's [hashing units](http://www.wolfgang-ehrhardt.de/crchash_en.html) (all files in the [src/we](src/we) directory).
 
 How to build:
 1. Open `src\PathLocate.ctpr` file with CodeTyphon.
