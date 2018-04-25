@@ -1,0 +1,89 @@
+#hlp_header {
+	padding: 5px;
+	text-align: left;
+	background-color: silver;
+	color: white;
+	border: 1px solid #808080;
+}
+
+#hlp_main {
+  background-color: #ffffff; text-align: left;
+  margin: 20px;
+}
+
+
+
+#hlp_footer {
+  margin: 10px 20px 10px 20px;
+  padding: 5px;
+  background-color: #ffffff; border-top: 1px solid #dfdfdf;
+  font-size: 8pt; font-family: verdana; color: #ffffff; text-align: center;
+}
+#hlp_footer td {
+  color: #ffffff; text-align: center; font-size: 9pt;
+}
+
+#contents { margin: 10px; }
+#contents div { margin-left: 20px; margin-top: 8px; font-weight: normal; }
+#contents div div { margin-left: 20px; margin-top: 2px; font-weight: normal; }
+#contents div div div { margin-left: 20px; margin-top: 0px; }
+
+.win_only {color: #eefaff; background-color: #0b66ee; padding: 1px 2px 1px 2px; font-family: 'Fira Mono',Monaco,monospace; font-size: 9pt; font-weight: normal;}
+.lin_only {color: #c5fac8; background-color: #45b43f; padding: 1px 2px 1px 2px; font-family: 'Fira Mono',Monaco,monospace; font-size: 9pt; font-weight: normal;}
+
+.cmd_line {color: black; background-color:#e8e8e8; font-size: 10pt; font-family: 'fira mono',consolas,'courier new'; padding: 1px 5px 1px 5px;}
+.cmd_line_block {margin: 10px 0px 10px 10px;}
+
+.example {margin: 30px 0px 40px 0px;}
+.code_inline { font-size: 10pt; font-family: 'fira mono',consolas,'courier new'; color: #721e0c; background-color:#ffefc4; padding:1px 2px 1px 2px;}
+
+.tdvl { text-align: right; background-color: #f0f0f0; padding: 4px 10px 4px 10px; }
+.tdvr { text-align: left; padding: 4px 10px 4px 10px; }
+
+.spacer1 { height: 10px; }
+.hlp_sep1 { border-top: 1px solid #dfdfdf; margin-top: 10px; margin-bottom: 8px; }
+.hlp_kw1 { font-style: italic; }
+.hlp_kw2 { font-weight: bold; }
+.hlp_img_title { font-weight: bold; margin: 4px; text-align: center; }
+
+.hlp_ActName { margin-left: 20px; font-weight: bold; margin-top: 10px; }
+.hlp_ActDesc { margin-left: 40px; }
+.hlp_ImgDesc { font-weight: bold; }
+
+.hlpDef { font-weight: bold; margin-top: 8px; margin-bottom: 4px; }
+.hlpDesc { margin-left: 20px; }
+
+/* --------------- TABLES ---------------- */
+.tableCL { border: 1px solid #cdcdcd; border-collapse: collapse; }
+.thCL { padding: 3px; padding-right: 6px; padding-left: 6px; font-family: calibri; font-size: 14px; font-weight: bold; background-color: #e4e4e4; border: 1px solid #cdcdcd; }
+.tdCL_Def { font-weight: bold; text-align: left; font-size: 12px; border: 1px solid #d8d8d8; padding: 4px; }
+.tdCL_Switch { font-weight: bold; text-align: left; font-size: 13px; font-family: 'fira mono',consolas,'courier new'; border: 1px solid #d8d8d8; padding: 5px; white-space: nowrap; }
+.tdCL_Ind { font-weight: bold; text-align: center; font-size: 13px; font-family: 'fira mono',consolas,'courier new'; border: 1px solid #d8d8d8; padding: 4px; }
+.tdCL_Desc { text-align:left; border: 1px solid #d8d8d8; padding: 5px; }
+
+
+/* ///////////////// INTERFACE ////////////// */
+.key { border: 1px solid #aaaaaa; padding: 0px 4px 1px 4px; background-color: #eeeeee; font-size: 12px; }
+.panel { font-family: arial; font-weight: bold; font-size: 1.2em; }
+.button { border: 1px solid #bbbbbb; padding: 0px 4px 1px 4px; background-color: #eeeeee; font-size: 1.0em; }
+.menu { font-style: italic; font-weight: bold; font-family: arial; font-size: 1.0em; }
+.menuitem { font-style: italic; font-weight: bold; font-family: arial; font-size: 1.0em; }
+.list { font-family: arial; font-weight: bold; font-size: 1.0em; }
+.listitem { font-family: arial; font-weight: bold; font-size: 1.0em; }
+.option { font-family: arial; font-weight: bold; font-size: 1.0em; }
+.window { font-family: arial; font-weight: bold; font-size: 1.0em; }
+.filename { font-family: 'fira mono',consolas,'courier new'; font-weight: bold; font-size: 1.1em; }
+
+/* ///////////////// LANGUAGE ////////////// */
+.lng_comm {color: #443333; background-color: #d0d0d0; font-family: 'fira mono','courier new';}
+.lng_direct {color: green;}
+.lng_key {font-weight: bold; color: black; font-family: 'fira mono','courier new';}
+.lng_num {color: red; font-family: 'fira mono','courier new';}
+.lng_str {color: blue; font-family: 'fira mono','courier new';}
+.lng_sym {color: maroon; font-family: 'fira mono','courier new';}
+
+.pas_assem { color: teal;	font-family: 'fira mono','courier new';}
+
+.bat_label {color: #552d60; font-family: 'fira mono',consolas,'courier new';}
+.bat_str {color: #0d1e44; background-color: #caebfb; font-family: 'fira mono',consolas,'courier new';}
+.bat_var {color: green;}

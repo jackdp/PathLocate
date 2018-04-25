@@ -1,0 +1,5 @@
+﻿This software is provided "as-is" and without warranty of any kind, express, implied or otherwise, including without limitation, any warranty of merchantability or fitness for a particular purpose. 
+
+Permission is granted to anyone to use this software without any limitation, for any purpose, including commercial use.
+
+Jacek Pazera

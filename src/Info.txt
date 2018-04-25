@@ -1,0 +1,71 @@
+
+CodeTyphon 6.40
+FPC 3.1.1
+
+----------------------------------------------------------
+
+Changes
+
+1.0 -> 1.1
+
+  CodeTyphon 6.30 -> 6.40
+  + Zastosowanie klasy TApp: TJPConsoleApp
+  + Hasze: MD5, SHA-1, SHA-2-256
+  - CRT - zbyt duże ograniczenia. Usunięte!
+  + Obsługa kolorów za pomocą modułu JPL.Console i JPL.Console.ColorParser
+  + Podświetlanie kilku typów plików (EXE, DLL, BAT, CMD, BPL, SH, SO)
+  + Podświetlanie tekstu podanego przez uzytkownika: -hus, -hus2
+  + Sprawdzanie, czy urządzenie wyjściowe jest "urządzeniem znakowym" (konsola, terminal, drukarka).
+    Jeśli tak, stosuję ANSI Escape Codes, w przeciwnym razie kody ANSI nie będą używane.
+    Dzięki temu strumień danych wyjściowych przekierowany do pliku/potoku nie będzie "zaśmiecony" kodami ANSI.
+  + Sortowanie: -sb, -sd
+  + Listowanie katalogów z %PATH%: -ld
+  + Long format switch: -l, --long
+  + Separator elementów listy oraz daty i czasu: -sl, -sdt
+  + Show errors: -err
+  + Daty: access, creation: -da, -dc
+  + Attributes: -a
+  + Short version info: -vs
+
+--------------------------------
+
+Releases
+
+  1.0 - 2018.01.25
+  1.1 - 2018.03.19
+
+
+----------------------------------------------------------
+
+Linux terminal
+
+Używać:
+  pathlocate "*"
+NIE
+  pathlocate *
+
+Sama * jest zamieniana automatycznie przez system na listę plików z bieżącego katalogu!
+
+----------------------------------------------------
+
+DO ZROBIENIA
+
+1. Wyszukiwanie plików zawierających podany tekst w VersionInfo.
+2. Limit rozmiaru:
+     -sm, --size-min
+     -sx, --size-max
+3. Obsługa wyrażeń regularnych (TRegExp A. Sorokina).
+4. DONE: Możliwość ustawienia separatora danych przez użytkownika, co pozwoli na przekierowanie wyjścia np. do pliku CSV.
+5. Filtrowanie plików wg dat podanych przez użytkownika.
+6. Kopiowanie wyjścia do schowka, tylko bez stosowania modułu "clipbrd" (rozmiar EXE Win 64-bit pow. 1.1 MB).
+7. Odczyt poleceń z plików. -i, --input-file
+
+
+-------------------------------------------------------
+
+JUŻ NIEAKTUALNE!
+
+  //CRT
+  //Gdy ustawiona jest dyrektywa kompilatora USE_COLORS (*CRT build modes), stosowany jest moduł Crt, który narzuca poważne ograniczenia,
+  //m.in. nie pozwala przekierować StdOut do pliku, brak kodowania UTF-8 w konsoli/termianlu, wyświetlanie dużej ilości plików trwa BARDZO wolno.
+  //Szczegóły: https://www.freepascal.org/docs-html/rtl/crt/index.html

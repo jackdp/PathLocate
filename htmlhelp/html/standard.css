@@ -1,0 +1,73 @@
+/* ----------------------- RESETS ------------------------- */
+form { margin: 0px; padding: 0px; border: 0px; }
+fieldset { margin: 0px; padding: 0px; border: 0px; }
+/* ul { margin: 0px; padding: 0px; border: 0px; } */
+td { margin: 0px; padding: 0px; border: 0px; }
+/* -------------------------------------------------------- */
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: verdana;
+  font-size: 10pt;
+  background-color: #FFFFFF;
+}
+
+/* img {margin: 0px auto; display:block;} */
+
+li {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+pre { margin: 0xp; padding: 0px; font-size: 10pt; font-family: 'fira mono',consolas,'courier new';}
+code { font-size: 10pt; font-family: 'fira mono',consolas,'courier new'; }
+
+ol { margin: 0px; padding-top: 0px; }
+ul { margin: 0px; padding-top: 0px; }
+
+table { border: 1px solid #cdcdcd; border-collapse: collapse; }
+th { padding: 3px; padding-right: 6px; padding-left: 6px; font-family: calibri; font-size: 14px; font-weight: bold; background-color: #e4e4e4; border: 1px solid #cdcdcd; }
+td { text-align: center; border: 1px solid #d8d8d8; padding: 4px; margin: 0px; }
+
+h1 {
+	font-family: calibri,arial;
+	font-size: 20pt;
+	font-weight: bold;
+	padding: 0px;
+	color: #301010;
+	margin: 0px;
+	margin-top: 10px;
+	text-align: center;
+}
+h2 {
+	font-family: calibri,arial;
+	font-size: 17pt;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 16px;
+	margin-bottom: 0px;
+	text-align: left;
+}
+h3 {
+	font-family: calibri,arial;
+	font-size: 14pt;
+	padding: 8px;
+	padding-left: 0px;
+	margin: 0px;
+	color: #301010;
+	text-align: left;
+}
+
+h4 {
+	font-family: calibri,arial;
+	font-size: 13pt;
+	padding: 8px;
+	padding-left: 0px;
+	margin: 0px;
+	color: #301010;
+	text-align: left;
+}
+
+p { padding: 0px; margin: 0px; margin-top: 6px; margin-bottom: 6px; }

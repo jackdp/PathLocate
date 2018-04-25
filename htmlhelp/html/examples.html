@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Examples - PathLocate</title>
+  <meta name="keywords" content="PathLocate, locate file, search file, PATH, PATH variable" />
+  <link rel="stylesheet" type="text/css" href="standard.css" />
+  <link rel="stylesheet" type="text/css" href="links.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+
+<body>
+
+<h1>Examples</h1>
+
+<div id="hlp_main">
+  
+<p class="hlp_sep1"></p>
+
+
+
+<ol style="margin-left: 20px;">
+
+
+<li class="example">
+Show all files from directories listed in the <span class="filename">%PATH%</span> environment variable:
+<ul>
+  <li>Windows: <span class="cmd_line">pathlocate *</span></li>
+  <li>Linux: <span class="cmd_line">pathlocate "*"</span></li>
+</ul>
+</li>
+
+
+
+<li class="example">
+Show the first 10 EXE and/or DLL files from directories listed in the <span class="filename">%PATH%</span> environment variable:
+<div class="cmd_line_block">
+<span class="cmd_line">pathlocate *.exe *.dll -l 10</span>
+</div>
+</li>
+
+
+
+<li class="example">
+Display VersionInfo block from the <span class="filename">msvcrt.dll</span> file and calculate its CRC32 cheksum:
+<div class="cmd_line_block">
+<span class="cmd_line">pathlocate msvcrt.dll -vi --crc</span>
+</div>
+Result:
+<div style="margin-top: 10px;">
+<img src="ex_msvcrt.png">
+</div>
+</li>
+
+
+
+<li class="example">
+Show executables (EXE) and batch scripts (BAT) that contain <span class="code_inline">powershell</span> in the name, and files that start with <span class="code_inline">pwsh</span> string. Use long format (<span class="code_inline">-l</span>). Highlight string <span class="code_inline">6.0.1</span> and <span class="code_inline">v1.0</span>.
+<div class="cmd_line_block">
+<span class="cmd_line">pathlocate *powershell*.exe *powershell*.bat pwsh* -l -hus "6.0.1" -hus2 "v1.0"</span>
+</div>
+Result:
+<div style="margin-top: 10px;">
+<img src="ex_powershell.png" alt="example">
+</div>
+</li>
+
+
+
+<li class="example">
+Show all files that contain the <span class="code_inline">fpc</span> string in the name.
+Show file size in human readable format (<span class="code_inline">-S</span>), show numbers(<span class="code_inline">-n</span>), show summary (<span class="code_inline">-u</span>).
+Highlight string <span class="code_inline">local</span> and <span class="code_inline">usr/bin/</span>.
+<div class="cmd_line_block">
+<span class="cmd_line">pathlocate *fpc* -S -n -u -hus local -hus2 "usr/bin/"</span>
+</div>
+Result:
+<div style="margin-top: 10px;">
+<img src="ex_linux.png" alt="PathLocate on Linux">
+</div>
+</li>
+
+
+
+<li class="example">
+Checking in the batch file whether the <span class="filename">7z</span> archiver can be run:
+<pre>
+
+<span class="lng_sym">@</span><b>echo off</b>
+
+pathlocate 7z.exe <span class="lng_sym">&gt;</span> nul
+
+<b>if</b> <span class="bat_var">%errorlevel%</span> <b>EQU</b> <span class="lng_num">0</span> <b>goto</b> <span class="bat_label">LBL_ALL_OK</span>
+<b>if</b> <span class="bat_var">%errorlevel%</span> <b>EQU</b> <span class="lng_num">1</span> <b>goto</b> <span class="bat_label">LBL_ERROR</span>
+<b>if</b> <span class="bat_var">%errorlevel%</span> <b>EQU</b> <span class="lng_num">2</span> <b>goto</b> <span class="bat_label">LBL_NO_FILES</span>
+
+<span class="bat_label">:LBL_ALL_OK</span>
+<b>echo</b> <span class="bat_str"> All OK! The 7z.exe file exists. We can start archiving. </span>
+<span class="lng_comm">rem ... do something ...</span>
+<b>goto</b> <span class="bat_label">LBL_END</span>
+
+
+<span class="bat_label">:LBL_ERROR</span>
+<b>echo</b> <span class="bat_str"> Wrong syntax or another error! </span>
+<b>goto</b> <span class="bat_label">LBL_END</span>
+
+
+<span class="bat_label">:LBL_NO_FILES</span>
+<b>echo</b> <span class="bat_str"> No 7z archiver found. Compression can not be started. </span>
+<b>goto</b> <span class="bat_label">LBL_END</span>
+
+
+<span class="bat_label">:LBL_END</span>
+<b>echo</b> <span class="bat_str"> --------- END ----------- </span>
+</pre>
+</li>
+
+
+</ol>
+
+
+
+
+
+
+</div> <!-- hlp_main -->
+
+
+
+<div id="hlp_footer">
+	<a href="http://www.pazera-software.com/">http://www.pazera-software.com/</a>
+</div> <!-- hlp_footer -->
+
+</body>
+
+</html>

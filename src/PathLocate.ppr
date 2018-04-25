@@ -1,0 +1,64 @@
+program PathLocate;
+
+{
+  Jacek Pazera
+  http://www.pazera-software.com
+  Last mod: 2018.03.19
+ }
+
+{$mode objfpc}{$H+}
+
+{$IFDEF MSWINDOWS}
+  {$APPTYPE CONSOLE}
+  {$SetPEFlags $20} // IMAGE_FILE_LARGE_ADDRESS_AWARE
+{$ENDIF}
+
+
+{$R *.res}
+
+uses
+  {$IFDEF UNIX}{$IFDEF UseCThreads} cthreads, {$ENDIF}{$ENDIF}
+  SysUtils,
+  PLOC.App,
+  PLOC.Types,
+  PLOC.PROCS
+  ;
+
+
+var
+  App: TApp;
+
+{$IFDEF MSWINDOWS}
+// Na Linuxie czasami wyskakuje EAccessViolation
+procedure MyExitProcedure;
+begin
+  if Assigned(App) then
+  begin
+    App.Done;
+    FreeAndNil(App);
+  end;
+end;
+{$ENDIF}
+
+
+begin
+
+  App := TApp.Create;
+  try
+
+    try
+
+      {$IFDEF MSWINDOWS}App.ExitProcedure := @MyExitProcedure;{$ENDIF}
+      App.Init;
+      App.Run;
+      if Assigned(App) then App.Done;
+
+    except
+      on E: Exception do Writeln(E.ClassName, ': ', E.Message);
+    end;
+
+  finally
+    if Assigned(App) then App.Free;
+  end;
+
+end.

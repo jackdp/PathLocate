@@ -1,0 +1,47 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=PathLocate.chm
+Contents file=Contents.hhc
+Default topic=html\overview.html
+Display compile progress=Yes
+Full-text search=Yes
+Language=0x0409 English (United States)
+Title=PathLocate
+Error log file=
+Full text search stop list file=
+Index file=Index.hhk
+Binary TOC=No
+Auto index=No
+Binary Index=No
+Create CHI file=No
+Display compile notes=Yes
+Default window=win1
+Enhanced decompilation=No
+Flat=No
+Default Font=Segoe UI,9,0
+
+[WINDOWS]
+win1="PathLocate 1.1 Help","Contents.hhc",,"html\overview.html","html\overview.html",,,,,0x00063520,264,0x0010387E,[31,12,928,627],,,,0,0,0,0
+
+[FILES]
+Contents.hhc
+html\examples.html
+html\license.html
+html\overview.html
+html\usage.html
+html\version.html
+
+[ALIAS]
+IDH_overview=html\overview.html
+IDH_usage=html\usage.html
+IDH_examples=html\examples.html
+IDH_license=html\license.html
+IDH_version=html\version.html
+
+[MAP]
+#define IDH_overview 1
+#define IDH_usage 2
+#define IDH_examples 3
+#define IDH_license 4
+#define IDH_version 5
+

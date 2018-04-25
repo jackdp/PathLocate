@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Usage - PathLocate</title>
+  <link rel="stylesheet" type="text/css" href="standard.css" />
+  <link rel="stylesheet" type="text/css" href="links.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+
+<body>
+
+<h1>Usage</h1>
+
+
+
+<div id="hlp_main">
+
+<p class="hlp_sep1"></p>
+
+
+
+
+<a id="usage"></a>
+
+<p style="margin: 20px;">
+<code><span class="filename" style="font-size: 16px;">PathLocate.exe</span> <span style="color: red; font-weight: bold; font-size: 14px;">FILES</span> [-c] [-n] [-s] [-S] <span class="win_only" title="Windows only">[-dc]</span> [-dw] [-da] <span class="win_only" title="Windows only">[-a]</span> <span class="win_only" title="Windows only">[-vi]</span> [-u] [-of=s|l|w] [-l] [-cs=1|0] [-sd=a|d] [-sb=[name|size|dw|<span class="win_only" title="Windows only">dc</span>|da]] [-hus=STR] [-hus2=STR] [-husc=[1|0]] <span class="win_only" title="Windows only">[-he]</span> <span class="win_only" title="Windows only">[-hd]</span> <span class="win_only" title="Windows only">[-hb]</span> <span class="win_only" title="Windows only">[-hc]</span> <span class="win_only" title="Windows only">[-hp]</span> <span class="lin_only" title="Linux only">[-hs]</span> <span class="lin_only" title="Linux only">[-hl]</span> [-hn] [-lm=n|X|fX|lX] [--crc] [--md5] [--sha1] [--sha2] [-ld] [-err=[1|0]] [-h] <span class="win_only" title="Windows only">[-hh]</span> [-V] [-vs] <span class="win_only" title="Windows only">[--home]</span></code>
+</p>
+
+
+
+
+<p class="hlp_sep1"></p>
+
+
+
+<!-- ////////////////////////////////// Command line params //////////////////////////////////// -->
+
+<a id="options"></a>
+<h2>Options</h2>
+
+<p>
+Mandatory arguments to long options are mandatory for short options too.<br>
+Options are case-sensitive. Options in square brackets are optional.<br>
+All parameters that do not start with the "-" or "/" sign are treated as file names/masks.<br>
+Options and input files can be placed in any order, but -- (double dash)<br>
+indicates the end of parsing options and all subsequent parameters are treated as file names/masks.
+</p>
+
+
+
+<p style="margin-top: 16px;">
+<code><span style="color: red; font-weight: bold; font-size: 14px;">FILES</span></code> - Any combination of file names / masks. E.g.: <span class="cmd_line">picture.png *build*.log "long file name*"</span>
+</p>
+
+
+
+
+<a id="opt_main"></a>
+<!-- ////////////////////// MAIN OPTIONS //////////////////////// -->
+<h3 style="margin-top: 20px;">Main options</h3>
+
+
+<table style="margin-left: 20px;" class="tableCL">
+<th class="thCL">Switch (Option)</th><th class="thCL">Description</th>
+
+<tr>
+  <td class="tdCL_Switch">-c, --curr-dir</td>
+  <td class="tdCL_Desc">Also searches for files in the current directory.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-ld, --list-dirs</td>
+  <td class="tdCL_Desc">List directories specified in the <span class="lngKeyword">%PATH%</span> and exit. You can sort list of directories with <code>-sb</code> switch in ascending (<code>-sd=a</code>) or descending (<code>-sd=d</code>) order.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-s, --case-sensitive=1|0</td>
+  <td class="tdCL_Desc">Case sensitive. 1 - enabled, 0 - disabled. Default: 0 on Windows, 1 on Linux. Used when searching and sorting files.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-lm, --limit=n|X|fX|lX</td>
+  <td class="tdCL_Desc">
+    File count limit:<br>
+    &nbsp;&nbsp;<code>n | none</code> - no limit (show all files). Default.<br>
+    &nbsp;&nbsp;<code>X</code> - show only the first X files.<br>
+    &nbsp;&nbsp;<code>fX | firstX</code> - as above<br>
+    &nbsp;&nbsp;<code>lX | lastX</code> - show only the last X files.
+  </td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-n, --numbers</td>
+  <td class="tdCL_Desc">Display file numbers.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-s, --size-bytes</td>
+  <td class="tdCL_Desc">Display file size in bytes.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-S, --size</td>
+  <td class="tdCL_Desc">Display file size in human readable format (e.g. 8KB, 16MB).</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-dc, --date-creation</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Display file creation time.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-dw, --date-write</td>
+  <td class="tdCL_Desc">Display file last write (modification) time.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-da, --date-access</td>
+  <td class="tdCL_Desc">Display file last access time.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-a, --attributes</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Display file attributes (<code>HSRALCE</code>). See additional info below.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-vi, --version-info</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Displays VersionInfo block from executable files, if available.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-u, --summary</td>
+  <td class="tdCL_Desc">Show summary: the number of files found, their total size, elapsed time.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-of, --out-format=s|l|f</td>
+  <td class="tdCL_Desc">
+    Output format: s, l, f<br>
+    &nbsp;&nbsp;<code>s | Simple</code> - only file names (default)<br>
+    &nbsp;&nbsp;<code>l | Long</code> - file names with additional information.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alias for: <code>-n -S -dw <span class="win_only" title="Windows only">-a</span> -u</code>.<br>
+    &nbsp;&nbsp;<code>f | Full</code> - displays full information.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alias for: <code>-n -s -S <span class="win_only" title="Windows only">-dc</span> -dw -da <span class="win_only" title="Windows only">-a</span> <span class="win_only" title="Windows only">-vi</span> -u</code>.
+  </td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-l, --long</td>
+  <td class="tdCL_Desc">Long format. Alias for <code>--out-format=long</code></td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-sl, --list-separator=STR</td>
+  <td class="tdCL_Desc">List separator. Default: " | "</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-sdt, --dt-separator=STR</td>
+  <td class="tdCL_Desc">Date-time separator. Default: " - "</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-err, --show-errors=1|0</td>
+  <td class="tdCL_Desc">Display errors. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+
+</table>
+
+<div style="margin: 20px 0px 0px 20px;">
+<h4>File attributes <span class="win_only" title="Windows only">Win</span></h4>
+
+<table style="border: 0px;">
+<tr>
+  <td><code>H</code> - hidden</td>
+  <td><code>S</code> - system</td>
+  <td><code>R</code> - read only</td>
+</tr>
+<tr>
+  <td><code>A</code> - archive</td>
+  <td><code>L</code> - symbolic link</td>
+  <td><code>C</code> - compressed</td>
+</tr>
+<tr>
+  <td colspan="3"><code>E</code> - encrypted</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+
+<a id="opt_sorting"></a>
+<!-- //////////////////////// SORTING //////////////////////// -->
+<h3 style="margin-top: 20px;">Sorting</h3>
+
+<table style="margin-left: 20px;" class="tableCL">
+<th>Switch</th><th>Description</th>
+
+<tr>
+  <td class="tdCL_Switch">-sb, --sort-by=[COL]</td>
+  <td class="tdCL_Desc">
+    Sort results by specified column. Available values:<br>
+    &nbsp;&nbsp;<code>name</code> - Sort results by file name. Default.<br>
+    &nbsp;&nbsp;<code>size</code> - Sort results by file size.<br>
+    &nbsp;&nbsp;<code>dc</code> - <span class="win_only" title="Windows only">Win</span> Sort results by file creation date.<br>
+    &nbsp;&nbsp;<code>dw</code> - Sort results by file last write date.<br>
+    &nbsp;&nbsp;<code>da</code> - Sort results by file last access date.<br>
+    &nbsp;&nbsp;<code>none</code> - Do not sort results.
+  </td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-sd, --sort-direction=a|d</td>
+  <td class="tdCL_Desc">
+    Sorting order. The <code>-sb</code> switch should be specified. Available values:<br>
+    &nbsp;&nbsp;<code>a | Ascending</code> - Sort results in ascending order. Default.<br>
+    &nbsp;&nbsp;<code>d | Descending</code> - Sort results in descending order.
+  </td>
+</tr>
+
+
+</table>
+
+
+
+<a id="opt_highlighting"></a>
+<!-- //////////////////////// HIGHLIGHTING //////////////////////// -->
+<h3 style="margin-top: 20px;">Highlighting</h3>
+
+
+<table style="margin-left: 20px;" class="tableCL">
+<th>Switch</th><th>Description</th>
+
+
+
+<tr>
+  <td class="tdCL_Switch">-hus, --highlight-str=STR</td>
+  <td class="tdCL_Desc">Highlight string specified by the user.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hus2, --highlight-str2=STR</td>
+  <td class="tdCL_Desc">Highlight string specified by the user.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-husc, --highlight-str-cs=[1|0]</td>
+  <td class="tdCL_Desc">Take into account (or not) the character size when highlighting the text provided by the user. 1 - enabled, 0 - disabled. Default: 0</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hn, --highlight-none</td>
+  <td class="tdCL_Desc">Don't highlight any files.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-he, --highlight-exe=1|0</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Highlight executable files - EXE. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hd, --highlight-dll=1|0</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Highlight DLL libraries. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hb, --highlight-bat=1|0</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Highlight batch scripts - BAT. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hc, --highlight-cmd=1|0</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Highlight CMD scripts. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hp, --highlight-bpl=1|0</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Highlight BPL libraries. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hs, --highlight-sh=1|0</td>
+  <td class="tdCL_Desc"><span class="lin_only" title="Linux only">Lin</span> Highlight shell scripts - SH. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hl, --highlight-so=1|0</td>
+  <td class="tdCL_Desc"><span class="lin_only" title="Linux only">Lin</span> Highlight SO libraries. 1 - enabled, 0 - disabled. Default: 1</td>
+</tr>
+
+</table>
+
+
+<a id="opt_hash"></a>
+<!-- //////////////////////// HASH //////////////////////// -->
+<h3 style="margin-top: 20px;">Checksum &amp; hash</h3>
+
+
+<table style="margin-left: 20px;" class="tableCL">
+<th>Switch</th><th>Description</th>
+
+<tr>
+  <td class="tdCL_Switch">--crc</td>
+  <td class="tdCL_Desc">Calculate CRC32 checksums of found files.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">--md5</td>
+  <td class="tdCL_Desc">Calculate MD5 hash of found files.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">--sha1</td>
+  <td class="tdCL_Desc">Calculate SHA-1 hash of found files.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">--sha2</td>
+  <td class="tdCL_Desc">Calculate SHA-2-256 hash of found files.</td>
+</tr>
+
+</table>
+
+
+
+<a id="opt_info"></a>
+<!-- //////////////////////// INFORMATION //////////////////////// -->
+<h3 style="margin-top: 20px;">Information</h3>
+
+
+<table style="margin-left: 20px;" class="tableCL">
+<th>Switch</th><th>Description</th>
+
+<tr>
+  <td class="tdCL_Switch">-h, --help</td>
+  <td class="tdCL_Desc">Display help.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-hh, --help-online</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Opens program help page in the default browser.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-V, --version</td>
+  <td class="tdCL_Desc">Show application name and version.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">-vs, --version-short</td>
+  <td class="tdCL_Desc">Show only the version number and exit.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">--home</td>
+  <td class="tdCL_Desc"><span class="win_only" title="Windows only">Win</span> Opens program homepage in the default browser.</td>
+</tr>
+
+
+</table>
+
+<br>
+
+
+
+
+<p class="hlp_sep1"></p>
+<!-- ///////////////////////////////////// Exit Codes ////////////////////////////////// -->
+<a id="exit_codes"></a>
+<h2>Exit codes</h2>
+
+<table style="margin-left: 20px; margin-top: 20px;" class="tableCL">
+<th class="thCL">Exit code</th><th class="thCL">Description</th>
+
+<tr>
+  <td class="tdCL_Switch">0</td>
+  <td class="tdCL_Desc">Success.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">1</td>
+  <td class="tdCL_Desc">Invalid syntax or other error.</td>
+</tr>
+
+<tr>
+  <td class="tdCL_Switch">2</td>
+  <td class="tdCL_Desc">No files found.</td>
+</tr>
+
+
+
+</table>
+
+
+
+</div> <!-- hlp_main -->
+
+
+
+<div id="hlp_footer">
+	<a href="http://www.pazera-software.com/">http://www.pazera-software.com/</a>
+</div> <!-- hlp_footer -->
+
+</body>
+
+</html>
