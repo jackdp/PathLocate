@@ -1,4 +1,4 @@
-# PathLocate
+﻿# PathLocate
 
 ## Overview
 
@@ -14,7 +14,7 @@ Binary (Windows 32-bit, Windows 64-bit, Linux 32-bit, Linux 64-bit): http://www.
 
 ## Documentation
 
-Full documentation available at http://www.pazera-software.com/products/path-locate/help.html
+Full documentation available at https://www.pazera-software.com/doc/path-locate/help.html
 
 ## Compilation
 
